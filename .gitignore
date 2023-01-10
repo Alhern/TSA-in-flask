@@ -1,3 +1,6 @@
 venv
 .idea/
 algo_container/__pycache__/
+ui_container/__pycache__/
+ui_container/.idea
+ui_container/venv

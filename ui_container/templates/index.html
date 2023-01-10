@@ -16,7 +16,7 @@
     <div class="container">
         <div class="content">
             <div class="card-body justify-content-center">
-                <h2 class="card-title">welcome to</h2>
+                <h2 class="card-title">FRONTEND welcome to</h2>
                 <pre class="card-text">
 ████████ ███████  █████
    ██    ██      ██   ██
@@ -38,14 +38,13 @@
             <button type="submit" class="btn btn-primary">Submit</button>
         </form>
     </div>
-    {% if result %}
+    {% if string_prediction %}
     <div class="container">
         <div class="content">
             <div class="card">
                 <div class="card-body justify-content-center">
                     <h2 class="card-title">Results:</h2>
-                    <p>{{ result }}</p>
-                    <p>Results will be here</p>
+                    <p>{{ string_prediction }}</p>
                 </div>
             </div>
         </div>
@@ -55,7 +54,8 @@
         <form method="POST" enctype="multipart/form-data">
             <div class="mb-3">
                 <label class="form-label">Upload the JSON corpus you want to analyze:</label>
-                <input type="file" name="file" accept=".json" class="form-outline form-control" placeholder="Enter your input here">
+                <input type="file" name="file" accept=".json" class="form-outline form-control"
+                       placeholder="Enter your input here">
                 <span class="form-text">.JSON files only</span>
             </div>
             <button type="submit" class="btn btn-primary">Submit</button>
@@ -68,13 +68,19 @@
             <div class="card">
                 <div class="card-body justify-content-center">
                     <h2 class="card-title">Prediction percentages:</h2>
-                    <p><b style="color: mediumseagreen">Positive</b>: {{'%0.2f' % pos_tweets|float}}%</p>
-                    <p><b style="color: crimson">Negative</b>: {{'%0.2f' % neg_tweets|float}}%</p>
+                    <p><b style="color: mediumseagreen">Positive tweets</b>: {{'%0.2f' % pos_tweets|float}}%</p>
+                    <p><b style="color: crimson">Negative tweets</b>: {{'%0.2f' % neg_tweets|float}}%</p>
                 </div>
             </div>
         </div>
     </div>
     {% endif %}
+    {% if error %}
+    <div class="container">
+        <b style="color: crimson">ERROR: Your file could not be processed. Make sure it's a valid .json file and try
+            again.</b>
+        {% endif %}
+    </div>
 
 </div>
 

@@ -1,7 +1,7 @@
 from algo_container.analyzer import predict_this, most_common_words, tokenize_tweets, dataset_prediction
 from algo_container.utils import read_json, valid_json
 import algo_container.plots
-from flask import Flask, request, render_template
+from flask import Flask, request
 import json
 
 ###################################################
@@ -19,25 +19,26 @@ def predict():
         if 'text' in request.form:
             text = request.form['text']
             result = predict_this(text)
-            return render_template('index.html', result=result)
+            return result
         elif request.files['file']:
             try:
                 file = request.files['file']
                 file.seek(0)
-                # data = read_json(file.read())
                 try:
                     data = json.loads(file.read().decode('utf-8'))
                 except ValueError as e:
                     print(f"Invalid JSON file: {e}")
-                    render_template('index.html')
+                    app.logger.error(e)
+                    return e
                 tokens = tokenize_tweets(data)
                 pos_tweets, neg_tweets = dataset_prediction(tokens)
-                return render_template('index.html', pos_tweets=pos_tweets, neg_tweets=neg_tweets)
+                result = json.dumps({"pos": pos_tweets, "neg": neg_tweets})
+                return result
             except Exception as e:
                 app.logger.error(e)
-                return render_template('index.html')
+                return e
     else:
-        return render_template('index.html')
+        return "", 200
 
 
 # def main():
