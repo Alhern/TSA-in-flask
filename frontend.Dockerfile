@@ -15,7 +15,7 @@ ENV PYTHONUNBUFFERED=1
 ENV PYTHONPATH "${PYTHONPATH}:/app"
 
 # install dependencies
-RUN apt-get update -y && apt-get upgrade -y && pip install -r ui_container/requirements.txt
+RUN apt-get update -y && apt-get upgrade -y && pip install --upgrade pip && pip install -r ui_container/requirements.txt
 
 ENTRYPOINT ["python3"]
 
