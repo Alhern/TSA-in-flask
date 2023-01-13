@@ -3,6 +3,15 @@ This is a web application that allows you to analyze the sentiment of a string o
 
 TSA in Flask is based on my [Twitter Sentiment Analyzer](https://github.com/Alhern/TSA), which uses Gensim's Word2Vec, NLTK, Keras and now Flask. And it now works in Docker. And in Vagrant too. 🐳
 
+### Table of Contents
+- [Recommendations](#recommendations)
+- [Installation](#installation):
+  - [Docker](#1-docker)
+  - [Vagrant](#2-vagrant)
+  - [Without Docker or Vagrant](#3-without-docker-or-vagrant)
+- [Usage](#usage)
+- [Troubleshooting](#troubleshooting)
+
 ## Recommendations
 The recommended versions of Docker and Vagrant are:
 * ```Docker version 20.10.22, build 3a2c30b```
