@@ -8,6 +8,7 @@ TSA in Flask is based on my [Twitter Sentiment Analyzer](https://github.com/Alhe
 - [Installation](#installation):
   - [Docker](#1-docker)
   - [Vagrant](#2-vagrant)
+  - [Pulling from Docker Hub](#3-pulling-from-docker-hub)
   - [Without Docker or Vagrant](#3-without-docker-or-vagrant)
 - [Usage](#usage)
 - [Troubleshooting](#troubleshooting)
@@ -24,7 +25,7 @@ This build has been tested on Windows 10 and Ubuntu 20.04 focal.
 
 
 ## Installation
-TSA in Flask can be installed in 3 different ways: with Docker ([1](#1-docker)), with Vagrant ([2](#2-vagrant)) or manually ([3](#3-without-docker-or-vagrant)).
+TSA in Flask can be installed in 4 different ways: with Docker ([1](#1-docker)), with Vagrant ([2](#2-vagrant)), by pulling from Docker Hub ([3](#3-pulling-from-docker-hub)), or manually ([3](#3-without-docker-or-vagrant)).
 ### 1) Docker
 Use the following command in the project's root directory to build and run the app:
 
@@ -39,7 +40,19 @@ Use the following command in the project's root directory to build and run the a
 
 The app will be available at ```localhost:5001```.
 
-### 3) Without Docker or Vagrant
+
+### 3) Pulling from Docker Hub
+Use the following commands to pull the containers' images from Docker Hub and run them:
+
+```
+$ cd version-image
+$ docker compose up
+```
+
+The app will be available at ```localhost:5001```.
+
+
+### 4) Without Docker or Vagrant
 You will have to change one line (#9) in ```ui_container/app.py``` to be able to run the app manually.
 
 Change ```url = 'http://algo_container:5000'``` to ```url = 'http://localhost:5000'```.
