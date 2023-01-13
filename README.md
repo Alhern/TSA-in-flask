@@ -82,7 +82,3 @@ Then, go to the "Advanced" tab and enable virtualization (VT-x). Save and exit a
 
 ### Using WSL2
 If you use WSL2 in Windows to run Vagrant and VirtualBox you might encounter issues. This can be due to Hyper-V on the host and tensorflow (1.14) requiring AVX and AVX2 instructions, it's therefore not recommended to use a virtual machine to run another virtual machine!
-
-
-
-```
