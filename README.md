@@ -15,7 +15,7 @@ This build has been tested on Windows 10 and Ubuntu 20.04 focal.
 
 
 ## Installation
-TSA in Flask can be installed in 3 different ways: with Docker ([1](#1--docker)), with Vagrant ([2](#2--vagrant)) or manually ([3](#3--without-docker-or-vagrant)).
+TSA in Flask can be installed in 3 different ways: with Docker ([1](#1-docker)), with Vagrant ([2](#2-vagrant)) or manually ([3](#3-without-docker-or-vagrant)).
 ### 1) Docker
 Use the following command in the project's root directory to build and run the app:
 
