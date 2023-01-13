@@ -65,7 +65,8 @@ $ pip3 install -r requirements.txt
 $ python3 app.py
 $ cd ..
 $ pip3 install -r requirements.txt
-$ cd ui_container python3 app.py 
+$ cd ui_container 
+$ python3 app.py 
 ```
 
 The app will be available at ```localhost:5001```.
