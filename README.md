@@ -62,3 +62,27 @@ The app has 2 main functionalities:
 ![image](https://res.cloudinary.com/takeout/image/upload/v1673613525/res2_bgkfus.png)
 
 ⚠️ Only .json files can be used, please refer to the [TSA](https://github.com/Alhern/TSA) repository for more information on how to get a valid .json file.
+
+## Troubleshooting
+You might encounter some issues with Vagrant, for example:
+### VT-x is disabled
+```
+There was an error while executing `VBoxManage`, a CLI used by Vagrant
+for controlling VirtualBox. The command and stderr is shown below.
+
+Command: ["startvm", "a5467e19-ec3d-4e50-96c3-65216be1a90a", "--type", "headless"]
+
+Stderr: VBoxManage: error: VT-x is disabled in the BIOS for all CPU modes (VERR_VMX_MSR_ALL_VMX_DISABLED)
+VBoxManage: error: Details: code NS_ERROR_FAILURE (0x80004005), component ConsoleWrap, interface IConsole
+```
+
+To fix this, you will have to enable virtualization (VT-x) in your BIOS.
+To do so, restart your computer and press the key to enter the BIOS. 
+Then, go to the "Advanced" tab and enable virtualization (VT-x). Save and exit and you should be good to go.
+
+### Using WSL2
+If you use WSL2 in Windows to run Vagrant and VirtualBox you might encounter issues. This can be due to Hyper-V on the host and tensorflow (1.14) requiring AVX and AVX2 instructions, it's therefore not recommended to use a virtual machine to run another virtual machine!
+
+
+
+```
