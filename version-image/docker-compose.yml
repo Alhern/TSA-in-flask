@@ -1,0 +1,17 @@
+version: '3'
+
+services:
+  algo_container:
+    image: alhern/tsa_algo_container:latest
+    volumes:
+      - ./algo_container:/algo_container
+    ports:
+      - "5000:5000"
+  ui_container:
+    image: alhern/tsa_ui_container:latest
+    volumes:
+      - ./ui_container:/ui_container
+    ports:
+      - "5001:5001"
+    depends_on:
+      - algo_container
