@@ -81,10 +81,22 @@ The app has 2 main functionalities:
 ![image](https://res.cloudinary.com/takeout/image/upload/v1673613527/res1_eeepks.png)
 
 ## Predict the sentiment of a corpus of tweets
+
 ![image](https://res.cloudinary.com/takeout/image/upload/v1673613119/tsa2_qkrqya.png)
 ![image](https://res.cloudinary.com/takeout/image/upload/v1673613525/res2_bgkfus.png)
+⚠️ Only .json files can be used with this function, please refer to the [TSA](https://github.com/Alhern/TSA) repository for more information on how to get a valid .json file.
 
-⚠️ Only .json files can be used, please refer to the [TSA](https://github.com/Alhern/TSA) repository for more information on how to get a valid .json file.
+Only the following format is valid:
+```
+[
+    {
+        "text": "Finally got a #Cyberpunk2077 crash with @GoogleStadia . First after 35 hours. Still not good to see a game crash, b… https://t.co/dhf0ewKxVX"
+    },
+    {
+        "text": "Has nobody seriously noticed the #DeadKennedys easter egg in #Cyberpunk2077 ? I cant find any mention of it anywher… https://t.co/r6fYhaj08h"
+    }
+]
+```
 
 # Troubleshooting
 You might encounter some issues with Vagrant, for example:
